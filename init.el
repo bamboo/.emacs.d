@@ -1,5 +1,5 @@
 ;; Packages
-(setq package-list 
+(setq package-list
       '(window-numbering paredit darcula-theme elisp-slime-nav magit
 	auto-complete haskell-mode))
 
@@ -7,9 +7,11 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
 
+
 ; fetch list of packages
 (unless package-archive-contents
   (package-refresh-contents))
+
 
 ; install missing packages
 (dolist (package package-list)
@@ -94,3 +96,8 @@
          (1+ (current-column))))))
 
 (define-key global-map (kbd "M-=") 'toggle-selective-display)
+
+
+;; File variables
+(add-hook 'find-file-hook
+	  (lambda () (set-variable 'show-trailing-whitespace t)))

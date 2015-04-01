@@ -1,7 +1,7 @@
 ;; Packages
-(setq package-list
-      '(window-numbering paredit darcula-theme elisp-slime-nav magit
-	auto-complete haskell-mode))
+(setq package-list '(magit window-numbering paredit darcula-theme
+			   elisp-slime-nav auto-complete haskell-mode
+			   ws-butler))
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
@@ -22,6 +22,9 @@
 ;; Modes
 (require 'window-numbering)
 (window-numbering-mode)
+
+(require 'ws-butler)
+(ws-butler-global-mode)
 
 (require 'recentf)
 (recentf-mode 1)
@@ -81,8 +84,8 @@
   "Toggle full screen"
   (interactive)
   (set-frame-parameter
-     nil 'fullscreen
-     (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
+   nil 'fullscreen
+   (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
 
 (define-key global-map (kbd "<f11>") 'toggle-fullscreen)
 (define-key global-map (kbd "C-=") 'text-scale-increase)

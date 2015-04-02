@@ -65,6 +65,7 @@
      (add-hook 'haskell-mode-hook 'auto-complete-mode)
      (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
      (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+     (add-hook 'flycheck-mode-hook #'flycheck-haskell-setup)
      (add-hook 'haskell-mode-hook 'flycheck-mode)
      (define-key haskell-mode-map (kbd "C-,") 'haskell-move-nested-left)
      (define-key haskell-mode-map (kbd "C-.") 'haskell-move-nested-right)

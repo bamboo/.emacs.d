@@ -5,6 +5,8 @@
 			   ws-butler
 			   clojure-mode cider ac-cider))
 
+(setq magit-last-seen-setup-instructions "1.4.0")
+
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)

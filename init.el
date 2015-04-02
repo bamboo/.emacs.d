@@ -1,7 +1,7 @@
 ;; Packages
 (setq package-list '(magit window-numbering paredit darcula-theme
 			   elisp-slime-nav auto-complete
-			   company company-ghci
+			   company company-ghci company-quickhelp
 			   haskell-mode flycheck flycheck-haskell
 			   ws-butler
 			   clojure-mode cider ac-cider))
@@ -32,6 +32,7 @@
 (ws-butler-global-mode)
 
 (add-hook 'after-init-hook 'global-company-mode)
+(add-hook 'after-change-major-mode-hook 'company-quickhelp-mode)
 
 (require 'recentf)
 (recentf-mode 1)
@@ -81,7 +82,6 @@
 (add-hook 'emacs-lisp-mode-hook 'elisp-slime-nav-mode)
 (require 'paredit)
 (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
-(add-hook 'emacs-lisp-mode-hook 'auto-complete-mode)
 
 
 ;; Magit

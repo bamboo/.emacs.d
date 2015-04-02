@@ -52,7 +52,10 @@
 ;(load-theme 'ample-flat t)
 ;(load-theme 'darkburn t)
 
-(set-frame-font "Inconsolata 19")
+(set-frame-font
+ (if (eq system-type 'darwin)
+     "Inconsolata 22"
+     "Inconsolata 19"))
 
 
 ;; Haskell

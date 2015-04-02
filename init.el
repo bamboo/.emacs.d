@@ -84,6 +84,10 @@
 (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
 
 
+;; Clojure
+(add-hook 'clojure-mode-hook 'paredit-mode)
+
+
 ;; Magit
 (require 'magit)
 (define-key global-map (kbd "C-x g") 'magit-status)

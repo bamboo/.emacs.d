@@ -1,7 +1,8 @@
 ;; Packages
 (setq package-list '(magit window-numbering paredit darcula-theme
 			   elisp-slime-nav auto-complete
-			   haskell-mode ac-haskell-process flycheck flycheck-haskell
+			   company company-ghci
+			   haskell-mode flycheck flycheck-haskell
 			   ws-butler
 			   clojure-mode cider ac-cider))
 
@@ -30,6 +31,8 @@
 (require 'ws-butler)
 (ws-butler-global-mode)
 
+(add-hook 'after-init-hook 'global-company-mode)
+
 (require 'recentf)
 (recentf-mode 1)
 
@@ -57,12 +60,10 @@
      "Inconsolata 22"
      "Inconsolata 19"))
 
-
 ;; Haskell
 (eval-after-load "haskell-mode"
   '(progn
      (require 'haskell)
-     (add-hook 'haskell-mode-hook 'auto-complete-mode)
      (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
      (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
      (add-hook 'flycheck-mode-hook #'flycheck-haskell-setup)

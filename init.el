@@ -1,7 +1,9 @@
 ;; Packages
 (setq package-list '(magit window-numbering paredit darcula-theme
-			   elisp-slime-nav auto-complete haskell-mode
-			   ws-butler))
+			   elisp-slime-nav auto-complete
+			   haskell-mode ac-haskell-process flycheck flycheck-haskell
+			   ws-butler
+			   clojure-mode cider ac-cider))
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
@@ -58,6 +60,7 @@
      (add-hook 'haskell-mode-hook 'auto-complete-mode)
      (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
      (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+     (add-hook 'haskell-mode-hook 'flycheck-mode)
      (define-key haskell-mode-map (kbd "C-,") 'haskell-move-nested-left)
      (define-key haskell-mode-map (kbd "C-.") 'haskell-move-nested-right)
      (define-key haskell-mode-map (kbd "C-c M-j") 'haskell-session-change)

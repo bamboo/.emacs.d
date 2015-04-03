@@ -2,7 +2,7 @@
 (setq package-list '(magit window-numbering paredit darcula-theme
 			   elisp-slime-nav auto-complete
 			   company company-ghci company-quickhelp
-			   haskell-mode flycheck flycheck-haskell
+			   haskell-mode hi2 flycheck flycheck-haskell
 			   ws-butler font-lock+ git-gutter-fringe
 			   clojure-mode cider ac-cider))
 
@@ -70,7 +70,10 @@
 (eval-after-load "haskell-mode"
   '(progn
      (require 'haskell)
-     (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+     (require 'company-ghci)
+
+     (require 'hi2)
+     (add-hook 'haskell-mode-hook 'turn-on-hi2)
      (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
      (add-hook 'flycheck-mode-hook #'flycheck-haskell-setup)
      (add-hook 'haskell-mode-hook 'flycheck-mode)

@@ -3,7 +3,7 @@
 			   elisp-slime-nav auto-complete
 			   company company-ghci company-quickhelp
 			   haskell-mode flycheck flycheck-haskell
-			   ws-butler
+			   ws-butler font-lock+ git-gutter-fringe
 			   clojure-mode cider ac-cider))
 
 (setq magit-last-seen-setup-instructions "1.4.0")
@@ -27,6 +27,11 @@
 ;; Modes
 (require 'window-numbering)
 (window-numbering-mode)
+
+(require 'font-lock)
+(require 'font-lock+)
+(require 'git-gutter-fringe)
+(global-git-gutter-mode t)
 
 (require 'ws-butler)
 (ws-butler-global-mode)

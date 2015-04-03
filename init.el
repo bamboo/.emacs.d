@@ -122,8 +122,8 @@
          (1+ (current-column))))))
 
 (define-key global-map (kbd "M-=") 'toggle-selective-display)
-
 (define-key global-map (kbd "M-\\") 'delete-horizontal-space)
+
 
 ;; File variables
 (add-hook 'find-file-hook

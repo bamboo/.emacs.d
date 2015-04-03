@@ -48,6 +48,7 @@
   (find-file (ido-completing-read "Find recent file: " recentf-list)))
 
 (global-set-key "\C-xf" 'ido-recentf-open)
+(global-set-key "\C-x\C-f" 'ido-find-file)
 
 
 ;; Appearance

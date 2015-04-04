@@ -4,7 +4,8 @@
 			   company company-ghci company-quickhelp
 			   haskell-mode hi2 flycheck flycheck-haskell
 			   ws-butler font-lock+ git-gutter-fringe
-			   clojure-mode cider ac-cider))
+			   clojure-mode cider ac-cider rainbow-delimiters
+			   projectile))
 
 (setq magit-last-seen-setup-instructions "1.4.0")
 
@@ -38,6 +39,11 @@
 
 (add-hook 'after-init-hook 'global-company-mode)
 (add-hook 'after-change-major-mode-hook 'company-quickhelp-mode)
+
+(require 'projectile)
+(projectile-global-mode)
+(add-to-list 'projectile-globally-ignored-file-suffixes "~")
+(global-set-key "\C-j" 'projectile-find-file)
 
 (require 'recentf)
 (recentf-mode 1)
@@ -76,8 +82,10 @@
      (require 'hi2)
      (add-hook 'haskell-mode-hook 'turn-on-hi2)
      (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+     (add-hook 'haskell-mode-hook 'show-paren-mode)
      (add-hook 'flycheck-mode-hook #'flycheck-haskell-setup)
      (add-hook 'haskell-mode-hook 'flycheck-mode)
+
      (define-key haskell-mode-map (kbd "C-,") 'haskell-move-nested-left)
      (define-key haskell-mode-map (kbd "C-.") 'haskell-move-nested-right)
      (define-key haskell-mode-map (kbd "C-c M-j") 'haskell-session-change)
@@ -91,10 +99,12 @@
 (add-hook 'emacs-lisp-mode-hook 'elisp-slime-nav-mode)
 (require 'paredit)
 (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
+(add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 
 
 ;; Clojure
 (add-hook 'clojure-mode-hook 'paredit-mode)
+(add-hook 'paredit-mode-hook 'rainbow-delimiters-mode)
 
 
 ;; Magit

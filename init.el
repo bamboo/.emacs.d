@@ -25,6 +25,8 @@
     (package-install package)))
 
 
+;; Always ask for y/n keypress instead of typing out 'yes' or 'no'
+(defalias 'yes-or-no-p 'y-or-n-p)
 ;; Modes
 (require 'window-numbering)
 (window-numbering-mode)

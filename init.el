@@ -146,3 +146,10 @@
 ;; File variables
 (add-hook 'find-file-hook
 	  (lambda () (set-variable 'show-trailing-whitespace t)))
+
+;; Custom variables
+(custom-theme-set-variables
+ 'user
+ '(ido-completion-buffer-all-completions t)
+ '(ido-enable-flex-matching t))
+

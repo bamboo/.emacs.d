@@ -97,11 +97,26 @@
      (define-key haskell-mode-map (kbd "C-,") 'haskell-move-nested-left)
      (define-key haskell-mode-map (kbd "C-.") 'haskell-move-nested-right)
      (define-key haskell-mode-map (kbd "C-c M-j") 'haskell-session-change)
-     (define-key haskell-mode-map (kbd "C-c C-c") 'haskell-compile)))
+     (define-key haskell-mode-map (kbd "C-c C-c") 'haskell-compile)
+     ;; Infer the type of the thing at point.
+     (define-key haskell-mode-map (kbd "C-c C-t") 'haskell-process-do-type)
+     ;; Display info (in the REPL) about the thing at point.
+     (define-key haskell-mode-map (kbd "C-c C-i") 'haskell-process-do-info)
+     ;; Insert the inferred type of the function at point into the code.
+     (define-key haskell-mode-map (kbd "C-c C-s") (lambda () (interactive) (haskell-process-do-type t)))
+     ;; Run `cabal test' in a compile buffer.
+     (define-key haskell-mode-map (kbd "C-c C-,") 'ohai-haskell/run-test-suite)))
 
 (eval-after-load "haskell-cabal"
   '(define-key haskell-cabal-mode-map (kbd "C-c C-c") 'haskell-compile))
 
+;; Mined from https://github.com/bodil/ohai-emacs/blob/master/modules/ohai-haskell.el
+;; bodil kills!
+(defun ohai-haskell/run-test-suite ()
+  (interactive)
+  (require 'compile)
+  (projectile-with-default-dir (projectile-project-root)
+    (compile "cabal test")))
 
 ;; ELisp
 (add-hook 'emacs-lisp-mode-hook 'elisp-slime-nav-mode)

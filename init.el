@@ -1,11 +1,14 @@
 ;; Packages
-(setq package-list '(magit window-numbering paredit darcula-theme
+(setq package-list '(magit window-numbering paredit
 			   elisp-slime-nav auto-complete
 			   company company-ghci company-quickhelp
 			   haskell-mode hi2 flycheck flycheck-haskell
 			   ws-butler font-lock+ git-gutter-fringe
 			   clojure-mode cider ac-cider rainbow-delimiters
-			   projectile))
+			   projectile ido-ubiquitous
+			   atom-dark-theme ample-zen-theme
+			   zenburn-them darcula-theme
+			   dockerfile-mode))
 
 (setq magit-last-seen-setup-instructions "1.4.0")
 
@@ -18,7 +21,6 @@
 (unless package-archive-contents
   (package-refresh-contents))
 
-
 ; install missing packages
 (dolist (package package-list)
   (unless (package-installed-p package)
@@ -28,10 +30,12 @@
 ;; Always ask for y/n keypress instead of typing out 'yes' or 'no'
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+
 ;; Always use UTF-8
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
+
 
 ;; Modes
 (require 'window-numbering)
@@ -72,14 +76,20 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
-(load-theme 'darcula t)
+; a curious mix
+(load-theme 'atom-dark t)
+(load-theme 'ample-zen t)
+
+;(load-theme 'zenburn t)
+;(load-theme 'dichromacy t)
+;(load-theme 'darcula t)
 ;(load-theme 'ample-flat t)
 ;(load-theme 'darkburn t)
 
 (set-frame-font
  (if (eq system-type 'darwin)
      "Inconsolata 22"
-     "Inconsolata 19"))
+   "Ubuntu Mono 19"))
 
 ;; Haskell
 (eval-after-load "haskell-mode"
@@ -165,6 +175,13 @@
 ;; Custom variables
 (custom-theme-set-variables
  'user
+
+ '(compilation-auto-jump-to-first-error t)
+ '(compilation-scroll-output 'first-error)
+
+ '(haskell-tags-on-save t)
+
  '(ido-completion-buffer-all-completions t)
- '(ido-enable-flex-matching t))
+ '(ido-enable-flex-matching t)
+ '(ido-ubiquitous-mode t))
 

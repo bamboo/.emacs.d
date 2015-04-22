@@ -7,15 +7,16 @@
 			   clojure-mode cider ac-cider rainbow-delimiters
 			   projectile ido-ubiquitous
 			   atom-dark-theme ample-zen-theme
-			   zenburn-them darcula-theme
+			   zenburn-theme darcula-theme
 			   dockerfile-mode))
 
 (setq magit-last-seen-setup-instructions "1.4.0")
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-(package-initialize)
+;(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
+(package-initialize)
 
 ; fetch list of packages
 (unless package-archive-contents

@@ -145,6 +145,10 @@
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'paredit-mode-hook 'rainbow-delimiters-mode)
 
+(eval-after-load "clojure-mode"
+  '(progn
+     (put-clojure-indent 'facts 1)))
+
 
 ;; Magit
 (require 'magit)

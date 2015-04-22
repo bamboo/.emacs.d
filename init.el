@@ -104,6 +104,12 @@
      (add-hook 'flycheck-mode-hook #'flycheck-haskell-setup)
      (add-hook 'haskell-mode-hook 'flycheck-mode)
 
+     (defun haskell-organize-imports ()
+       (interactive)
+       (haskell-sort-imports)
+       (haskell-align-imports))
+
+     (define-key haskell-mode-map (kbd "C-c C-o") 'haskell-organize-imports)
      (define-key haskell-mode-map (kbd "C-,") 'haskell-move-nested-left)
      (define-key haskell-mode-map (kbd "C-.") 'haskell-move-nested-right)
      (define-key haskell-mode-map (kbd "C-c M-j") 'haskell-session-change)

@@ -110,19 +110,22 @@
        (haskell-sort-imports)
        (haskell-align-imports))
 
-     (define-key haskell-mode-map (kbd "C-c C-o") 'haskell-organize-imports)
-     (define-key haskell-mode-map (kbd "C-,") 'haskell-move-nested-left)
-     (define-key haskell-mode-map (kbd "C-.") 'haskell-move-nested-right)
-     (define-key haskell-mode-map (kbd "C-c M-j") 'haskell-session-change)
-     (define-key haskell-mode-map (kbd "C-c C-c") 'haskell-compile)
+     (defun define-haskell-key (key f)
+       (define-key haskell-mode-map (kbd key) f))
+
+     (define-haskell-key "C-c C-o" 'haskell-organize-imports)
+     (define-haskell-key "C-," 'haskell-move-nested-left)
+     (define-haskell-key "C-." 'haskell-move-nested-right)
+     (define-haskell-key "C-c M-j" 'haskell-session-change)
+     (define-haskell-key "C-c C-c" 'haskell-compile)
      ;; Infer the type of the thing at point.
-     (define-key haskell-mode-map (kbd "C-c C-t") 'haskell-process-do-type)
+     (define-haskell-key "C-c C-t" 'haskell-process-do-type)
      ;; Display info (in the REPL) about the thing at point.
-     (define-key haskell-mode-map (kbd "C-c C-i") 'haskell-process-do-info)
+     (define-haskell-key "C-c C-i" 'haskell-process-do-info)
      ;; Insert the inferred type of the function at point into the code.
-     (define-key haskell-mode-map (kbd "C-c C-s") (lambda () (interactive) (haskell-process-do-type t)))
+     (define-haskell-key "C-c C-s" (lambda () (interactive) (haskell-process-do-type t)))
      ;; Run `cabal test' in a compile buffer.
-     (define-key haskell-mode-map (kbd "C-c C-,") 'ohai-haskell/run-test-suite)))
+     (define-haskell-key "C-c C-," 'ohai-haskell/run-test-suite)))
 
 (eval-after-load "haskell-cabal"
   '(define-key haskell-cabal-mode-map (kbd "C-c C-c") 'haskell-compile))

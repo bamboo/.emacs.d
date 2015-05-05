@@ -78,10 +78,10 @@
 (menu-bar-mode -1)
 
 ; a curious mix
-(load-theme 'atom-dark t)
-(load-theme 'ample-zen t)
+;(load-theme 'atom-dark t)
+;(load-theme 'ample-zen t)
 
-;(load-theme 'zenburn t)
+(load-theme 'zenburn t)
 ;(load-theme 'dichromacy t)
 ;(load-theme 'darcula t)
 ;(load-theme 'ample-flat t)
@@ -90,7 +90,10 @@
 (set-frame-font
  (if (eq system-type 'darwin)
      "Inconsolata 22"
-   "Ubuntu Mono 19"))
+   "Ubuntu Mono 22"))
+
+(set-face-font 'mode-line "droid sans mono 15")
+(set-face-font 'mode-line-inactive "droid sans mono 14")
 
 ;; Haskell
 (eval-after-load "haskell-mode"

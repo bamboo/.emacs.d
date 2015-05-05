@@ -151,7 +151,8 @@
 
 (eval-after-load "clojure-mode"
   '(progn
-     (put-clojure-indent 'facts 1)))
+     (dolist (m '(facts fact match while-let go-loop-trace go-while-let))
+       (put-clojure-indent m 1))))
 
 
 ;; Magit

@@ -7,7 +7,7 @@
 			   clojure-mode cider ac-cider rainbow-delimiters
 			   projectile ido-ubiquitous
 			   atom-dark-theme ample-zen-theme
-			   zenburn-theme darcula-theme
+			   zenburn-theme darcula-theme seti-theme
 			   dockerfile-mode))
 
 (setq magit-last-seen-setup-instructions "1.4.0")
@@ -77,11 +77,11 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
-; a curious mix
+(load-theme 'seti t)
 ;(load-theme 'atom-dark t)
 ;(load-theme 'ample-zen t)
-
-(load-theme 'zenburn t)
+;(load-theme 'moe-light t)
+;(load-theme 'zenburn t)
 ;(load-theme 'dichromacy t)
 ;(load-theme 'darcula t)
 ;(load-theme 'ample-flat t)
@@ -90,7 +90,7 @@
 (set-frame-font
  (if (eq system-type 'darwin)
      "Inconsolata 22"
-   "Ubuntu Mono 22"))
+   "Ubuntu Mono 17"))
 
 (set-face-font 'mode-line "droid sans mono 15")
 (set-face-font 'mode-line-inactive "droid sans mono 14")

@@ -88,13 +88,26 @@
 ;(load-theme 'ample-flat t)
 ;(load-theme 'darkburn t)
 
-(set-frame-font
- (if (eq system-type 'darwin)
-     "Inconsolata 22"
-   "Ubuntu Mono 17"))
+(defun bamboo/windows-appearance ()
+  (set-frame-font "Consolas 20")
+  (set-face-font 'mode-line "Consolas 15")
+  (set-face-font 'mode-line-inactive "Consolas 14"))
 
-(set-face-font 'mode-line "droid sans mono 15")
-(set-face-font 'mode-line-inactive "droid sans mono 14")
+(defun bamboo/default-appearance ()
+  (set-frame-font "Ubuntu Mono 17")
+  (set-face-font 'mode-line "droid sans mono 15")
+  (set-face-font 'mode-line-inactive "droid sans mono 14"))
+
+(defun bamboo/osx-appearance ()
+  (set-frame-font "Inconsolata 22")
+  (set-face-font 'mode-line "Inconsolata 19")
+  (set-face-font 'mode-line-inactive "Inconsolata 18"))
+
+(pcase system-type
+  (`darwin     (bamboo/osx-appearance))
+  (`windows-nt (bamboo/windows-appearance))
+  (_           (bamboo/default-appearance)))
+
 
 ;; Haskell
 (eval-after-load "haskell-mode"

@@ -108,6 +108,7 @@
   (`windows-nt (bamboo/windows-appearance))
   (_           (bamboo/default-appearance)))
 
+(add-hook 'after-init-hook 'toggle-fullscreen)
 
 ;; Haskell
 (eval-after-load "haskell-mode"

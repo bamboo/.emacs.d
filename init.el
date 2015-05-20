@@ -16,6 +16,7 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 ;(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
+(setq package-enable-at-startup nil)
 (package-initialize)
 
 ; fetch list of packages

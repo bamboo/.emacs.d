@@ -88,25 +88,25 @@
 ;(load-theme 'ample-flat t)
 ;(load-theme 'darkburn t)
 
-(defun bamboo/windows-appearance ()
+(defun my/windows-appearance ()
   (set-frame-font "Consolas 20")
   (set-face-font 'mode-line "Consolas 15")
   (set-face-font 'mode-line-inactive "Consolas 14"))
 
-(defun bamboo/default-appearance ()
+(defun my/default-appearance ()
   (set-frame-font "Ubuntu Mono 17")
   (set-face-font 'mode-line "droid sans mono 15")
   (set-face-font 'mode-line-inactive "droid sans mono 14"))
 
-(defun bamboo/osx-appearance ()
+(defun my/osx-appearance ()
   (set-frame-font "Inconsolata 22")
   (set-face-font 'mode-line "Inconsolata 19")
   (set-face-font 'mode-line-inactive "Inconsolata 18"))
 
 (pcase system-type
-  (`darwin     (bamboo/osx-appearance))
-  (`windows-nt (bamboo/windows-appearance))
-  (_           (bamboo/default-appearance)))
+  (`darwin     (my/osx-appearance))
+  (`windows-nt (my/windows-appearance))
+  (_           (my/default-appearance)))
 
 (add-hook 'after-init-hook 'toggle-fullscreen)
 

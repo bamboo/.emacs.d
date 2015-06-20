@@ -169,7 +169,20 @@
 
 (eval-after-load "clojure-mode"
   '(progn
-     (dolist (m '(facts fact match while-let go-loop-trace go-while-let))
+     (require 'ac-cider)
+     (add-hook 'cider-mode-hook 'ac-flyspell-workaround)
+     (add-hook 'cider-mode-hook 'ac-cider-setup)
+     (add-hook 'cider-repl-mode-hook 'ac-cider-setup)
+     (add-hook 'cider-repl-mode-hook 'paredit-mode)
+     (eval-after-load "auto-complete"
+       '(progn
+	  (add-to-list 'ac-modes 'cider-mode)
+	  (add-to-list 'ac-modes 'cider-repl-mode)))
+
+     (put-clojure-indent 'go-trace 0)
+
+
+     (dolist (m '(facts fact match while-let go-loop-trace go-while-let alt!))
        (put-clojure-indent m 1))))
 
 

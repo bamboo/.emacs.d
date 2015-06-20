@@ -90,6 +90,13 @@
 ;(load-theme 'ample-flat t)
 ;(load-theme 'darkburn t)
 
+(defun toggle-fullscreen ()
+  "Toggle full screen"
+  (interactive)
+  (set-frame-parameter
+   nil 'fullscreen
+   (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
+
 (defun my/windows-appearance ()
   (set-frame-font "Consolas 20")
   (set-face-font 'mode-line "Consolas 15")
@@ -101,16 +108,19 @@
   (set-face-font 'mode-line-inactive "droid sans mono 14"))
 
 (defun my/osx-appearance ()
-  (set-frame-font "Inconsolata 22")
+  (set-frame-font "Inconsolata 28")
   (set-face-font 'mode-line "Inconsolata 19")
   (set-face-font 'mode-line-inactive "Inconsolata 18"))
 
-(pcase system-type
-  (`darwin     (my/osx-appearance))
-  (`windows-nt (my/windows-appearance))
-  (_           (my/default-appearance)))
+(defun my/initial-appearance ()
+  (interactive)
+  (pcase system-type
+    (`darwin     (my/osx-appearance))
+    (`windows-nt (my/windows-appearance))
+    (_           (my/default-appearance)))
+  (toggle-fullscreen))
 
-(add-hook 'after-init-hook 'toggle-fullscreen)
+(my/initial-appearance)
 
 ;; Haskell
 (eval-after-load "haskell-mode"
@@ -200,13 +210,6 @@
 
 
 ;; Custom Keybindings
-(defun toggle-fullscreen ()
-  "Toggle full screen"
-  (interactive)
-  (set-frame-parameter
-   nil 'fullscreen
-   (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
-
 (define-key global-map (kbd "<f11>") 'toggle-fullscreen)
 (define-key global-map (kbd "C-=") 'text-scale-increase)
 (define-key global-map (kbd "C-+") 'text-scale-decrease)

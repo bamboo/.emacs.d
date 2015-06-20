@@ -185,6 +185,8 @@
      (dolist (m '(facts fact match while-let go-loop-trace go-while-let alt!))
        (put-clojure-indent m 1))))
 
+;; Metascript
+(add-hook 'metascript-mode-hook #'flymake-mode)
 
 ;; Magit
 (require 'magit)

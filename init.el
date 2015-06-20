@@ -128,6 +128,10 @@
        (haskell-sort-imports)
        (haskell-align-imports))
 
+     (defun my/haskell-insert-type ()
+       (interactive)
+       (haskell-process-do-type t))
+
      (defun define-haskell-key (key f)
        (define-key haskell-mode-map (kbd key) f))
 
@@ -141,7 +145,7 @@
      ;; Display info (in the REPL) about the thing at point.
      (define-haskell-key "C-c C-i" 'haskell-process-do-info)
      ;; Insert the inferred type of the function at point into the code.
-     (define-haskell-key "C-c C-s" (lambda () (interactive) (haskell-process-do-type t)))
+     (define-haskell-key "C-c C-s" 'my/haskell-insert-type)
      ;; Run `cabal test' in a compile buffer.
      (define-haskell-key "C-c C-," 'ohai-haskell/run-test-suite)))
 

@@ -6,8 +6,7 @@
 			   ws-butler font-lock+ git-gutter-fringe
 			   clojure-mode cider ac-cider rainbow-delimiters
 			   projectile ido-ubiquitous
-			   atom-dark-theme ample-zen-theme
-			   zenburn-theme darcula-theme seti-theme
+			   zenburn-theme darcula-theme seti-theme leuven-theme
 			   dockerfile-mode))
 
 (setq magit-last-seen-setup-instructions "1.4.0")
@@ -78,7 +77,10 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
-(load-theme 'seti t)
+(load-theme 'leuven t)
+;(load-theme 'organic-green t)
+;(load-theme 'seti t)
+;(load-theme 'tangotango)
 ;(load-theme 'atom-dark t)
 ;(load-theme 'ample-zen t)
 ;(load-theme 'moe-light t)

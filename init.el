@@ -205,6 +205,10 @@
 ;; Metascript
 (add-hook 'metascript-mode-hook #'flymake-mode)
 
+(eval-after-load "metascript-mode"
+  '(progn
+     (define-key metascript-mode-map (kbd "C-c ! n") 'flymake-goto-next-error)))
+
 ;; Magit
 (require 'magit)
 (define-key global-map (kbd "C-x g") 'magit-status)

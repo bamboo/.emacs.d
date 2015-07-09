@@ -100,7 +100,7 @@
   (set-face-font 'mode-line-inactive "Consolas 14"))
 
 (defun my/default-appearance ()
-  (set-frame-font "Ubuntu Mono 17")
+  (set-frame-font "Ubuntu Mono 23")
   (set-face-font 'mode-line "droid sans mono 15")
   (set-face-font 'mode-line-inactive "droid sans mono 14"))
 

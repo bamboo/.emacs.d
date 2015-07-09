@@ -37,8 +37,8 @@
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
-
 ;; Modes
+(autoload 'ace-jump-mode "ace-jump-mode" "Emacs quick move minor mode" t)
 (define-key global-map (kbd "C-o") 'ace-jump-mode)
 
 (require 'window-numbering)
@@ -80,12 +80,7 @@
 (menu-bar-mode -1)
 
 ;(load-theme 'leuven t)
-;(load-theme 'organic-green t)
 ;(load-theme 'seti t)
-;(load-theme 'tangotango)
-;(load-theme 'atom-dark t)
-;(load-theme 'ample-zen t)
-;(load-theme 'moe-light t)
 (load-theme 'zenburn t)
 ;(load-theme 'dichromacy t)
 ;(load-theme 'darcula t)

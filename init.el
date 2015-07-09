@@ -7,7 +7,7 @@
 			   clojure-mode cider ac-cider rainbow-delimiters
 			   projectile ido-ubiquitous ace-jump-mode
 			   zenburn-theme darcula-theme seti-theme leuven-theme
-			   dockerfile-mode))
+			   dockerfile-mode idris-mode))
 
 (setq magit-last-seen-setup-instructions "1.4.0")
 
@@ -79,14 +79,14 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
-(load-theme 'leuven t)
+;(load-theme 'leuven t)
 ;(load-theme 'organic-green t)
 ;(load-theme 'seti t)
 ;(load-theme 'tangotango)
 ;(load-theme 'atom-dark t)
 ;(load-theme 'ample-zen t)
 ;(load-theme 'moe-light t)
-;(load-theme 'zenburn t)
+(load-theme 'zenburn t)
 ;(load-theme 'dichromacy t)
 ;(load-theme 'darcula t)
 ;(load-theme 'ample-flat t)
@@ -180,6 +180,10 @@
 (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 
+;; idris
+(eval-after-load "idris-mode"
+  '(progn
+     (define-key idris-mode-map (kbd "C-c ,") 'idris-compile-and-execute)))
 
 ;; Clojure
 (add-hook 'clojure-mode-hook 'paredit-mode)

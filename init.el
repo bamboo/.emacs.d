@@ -110,7 +110,7 @@
   (set-face-font 'mode-line-inactive "droid sans mono 14"))
 
 (defun my/osx-appearance ()
-  (set-frame-font "Inconsolata 28")
+  (set-frame-font "Source Code Pro Light 24")
   (set-face-font 'mode-line "Inconsolata 19")
   (set-face-font 'mode-line-inactive "Inconsolata 18"))
 

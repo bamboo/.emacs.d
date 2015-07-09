@@ -5,7 +5,7 @@
 			   haskell-mode hi2 flycheck flycheck-haskell
 			   ws-butler font-lock+ git-gutter-fringe
 			   clojure-mode cider ac-cider rainbow-delimiters
-			   projectile ido-ubiquitous
+			   projectile ido-ubiquitous ace-jump-mode
 			   zenburn-theme darcula-theme seti-theme leuven-theme
 			   dockerfile-mode))
 
@@ -39,6 +39,8 @@
 
 
 ;; Modes
+(define-key global-map (kbd "C-o") 'ace-jump-mode)
+
 (require 'window-numbering)
 (window-numbering-mode)
 

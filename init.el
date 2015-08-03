@@ -6,7 +6,7 @@
 			   ws-butler font-lock+ git-gutter-fringe
 			   clojure-mode cider ac-cider rainbow-delimiters
 			   projectile ido-ubiquitous ace-jump-mode
-			   zenburn-theme darcula-theme seti-theme leuven-theme
+			   zenburn-theme darcula-theme seti-theme leuven-theme color-theme-solarized
 			   dockerfile-mode idris-mode))
 
 (setq magit-last-seen-setup-instructions "1.4.0")
@@ -79,13 +79,17 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
+(load-theme 'solarized t)
 ;(load-theme 'leuven t)
+;(load-theme 'idris-leuven t)
+;(load-theme 'organic-green t)
 ;(load-theme 'seti t)
-(load-theme 'zenburn t)
+;(load-theme 'atom-dark t)
+;(load-theme 'ample-zen t)
+;(load-theme 'zenburn t)
 ;(load-theme 'dichromacy t)
 ;(load-theme 'darcula t)
 ;(load-theme 'ample-flat t)
-;(load-theme 'darkburn t)
 
 (defun toggle-fullscreen ()
   "Toggle full screen"
@@ -105,7 +109,7 @@
   (set-face-font 'mode-line-inactive "droid sans mono 14"))
 
 (defun my/osx-appearance ()
-  (set-frame-font "Source Code Pro Light 24")
+  (set-frame-font "Inconsolata 27")
   (set-face-font 'mode-line "Inconsolata 19")
   (set-face-font 'mode-line-inactive "Inconsolata 18"))
 

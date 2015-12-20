@@ -41,6 +41,7 @@
 ;; Modes
 (autoload 'ace-jump-mode "ace-jump-mode" "Emacs quick move minor mode" t)
 (define-key global-map (kbd "C-o") 'ace-jump-mode)
+(define-key global-map (kbd "C-;") 'ace-jump-char-mode)
 
 (define-key global-map (kbd "C-c l") 'org-store-link)
 

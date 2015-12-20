@@ -1,5 +1,5 @@
 ;; Packages
-(setq package-list '(magit window-numbering paredit
+(setq package-list '(magit window-numbering paredit highlight-symbol
 			   elisp-slime-nav auto-complete
 			   company company-ghci company-quickhelp
 			   haskell-mode hi2 flycheck flycheck-haskell
@@ -137,6 +137,7 @@
      (add-hook 'haskell-mode-hook 'show-paren-mode)
      (add-hook 'flycheck-mode-hook #'flycheck-haskell-setup)
      (add-hook 'haskell-mode-hook 'flycheck-mode)
+     (add-hook 'haskell-mode-hook 'highlight-symbol-mode)
 
      (defun haskell-organize-imports ()
        (interactive)

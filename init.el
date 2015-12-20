@@ -207,8 +207,6 @@
 	  (add-to-list 'ac-modes 'cider-repl-mode)))
 
      (put-clojure-indent 'go-trace 0)
-
-
      (dolist (m '(facts fact match while-let go-loop-trace go-while-let alt!))
        (put-clojure-indent m 1))))
 

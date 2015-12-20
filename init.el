@@ -7,7 +7,8 @@
 			   clojure-mode cider ac-cider rainbow-delimiters
 			   projectile ido-ubiquitous ace-jump-mode
 			   zenburn-theme darcula-theme seti-theme leuven-theme color-theme-solarized
-			   dockerfile-mode idris-mode))
+			   dockerfile-mode idris-mode
+			   evil))
 
 (setq magit-last-seen-setup-instructions "1.4.0")
 
@@ -236,6 +237,8 @@
 (define-key global-map (kbd "M-=") 'toggle-selective-display)
 (define-key global-map (kbd "M-\\") 'delete-horizontal-space)
 
+(require 'evil)
+(evil-mode)
 
 ;; File variables
 (add-hook 'find-file-hook

@@ -237,6 +237,7 @@
 (define-key global-map (kbd "M-=") 'toggle-selective-display)
 (define-key global-map (kbd "M-\\") 'delete-horizontal-space)
 
+(setq evil-shift-width 2)
 (require 'evil)
 (evil-mode)
 

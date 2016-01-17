@@ -115,8 +115,8 @@
 
 (defun my/osx-appearance ()
   (set-frame-font "Inconsolata 31")
-  (set-face-font 'mode-line "Hasklig 17")
-  (set-face-font 'mode-line-inactive "Hasklig 16"))
+  (set-face-font 'mode-line "Monoid 17")
+  (set-face-font 'mode-line-inactive "Monoid 16"))
 
 (defun my/initial-appearance ()
   (interactive)

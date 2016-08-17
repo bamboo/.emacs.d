@@ -239,8 +239,12 @@
 (define-key global-map (kbd "M-\\") 'delete-horizontal-space)
 
 (setq evil-shift-width 2)
+
 (require 'evil)
 (evil-mode)
+
+(require 'evil-mc)
+(global-evil-mc-mode 1)
 
 ;; File variables
 (add-hook 'find-file-hook

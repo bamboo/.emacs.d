@@ -178,7 +178,7 @@
   (interactive)
   (require 'compile)
   (projectile-with-default-dir (projectile-project-root)
-    (compile "cabal test" t)))
+    (compile "stack test" t)))
 
 ;; ELisp
 (add-hook 'emacs-lisp-mode-hook 'elisp-slime-nav-mode)

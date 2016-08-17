@@ -88,13 +88,10 @@
 (menu-bar-mode -1)
 
 ;(load-theme 'cyberpunk t)
-;(load-theme 'solarized t)
 ;(load-theme 'leuven t)
 ;(load-theme 'idris-leuven t)
-;(load-theme 'organic-green t)
 ;(load-theme 'seti t)
 ;(load-theme 'atom-dark t)
-;(load-theme 'ample-zen t)
 (load-theme 'zenburn t)
 ;(load-theme 'dichromacy t)
 ;(load-theme 'darcula t)

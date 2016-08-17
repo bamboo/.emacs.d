@@ -1,14 +1,14 @@
 ;; Packages
 (setq package-list '(magit window-numbering paredit highlight-symbol
 			   elisp-slime-nav auto-complete
-			   company company-ghci company-quickhelp
-			   haskell-mode hi2 flycheck flycheck-haskell
+			   company company-quickhelp
+			   haskell-mode company-ghci hi2 flycheck flycheck-haskell
 			   ws-butler font-lock+ git-gutter-fringe
 			   clojure-mode cider ac-cider rainbow-delimiters
 			   projectile ido-ubiquitous ace-jump-mode
-			   zenburn-theme darcula-theme seti-theme leuven-theme color-theme-solarized
+			   zenburn-theme darcula-theme leuven-theme
 			   dockerfile-mode idris-mode markdown-mode
-			   evil))
+			   evil evil-mc which-key))
 
 (setq magit-last-seen-setup-instructions "1.4.0")
 
@@ -42,6 +42,10 @@
 (autoload 'ace-jump-mode "ace-jump-mode" "Emacs quick move minor mode" t)
 (define-key global-map (kbd "C-o") 'ace-jump-mode)
 (define-key global-map (kbd "C-;") 'ace-jump-char-mode)
+
+;; which-key
+(require 'which-key)
+(which-key-mode)
 
 (define-key global-map (kbd "C-c l") 'org-store-link)
 
